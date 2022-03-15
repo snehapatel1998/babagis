@@ -1,0 +1,438 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entry</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+ <style>
+    #customers {
+      font-family: Arial, Helvetica, sans-serif;
+      border-collapse: collapse;
+      width: 90%;
+    }
+    
+    #customers td, #customers th {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+    #h2{
+      color:#8c31b6
+    }
+    #h1{
+      padding-left: 30%;
+      background-color: #8c31b6;
+      color: #f2f2f2;
+      width: 60%;
+    }
+    #sub{
+      background-color: #8c31b6;
+      color: #f2f2f2;
+    }
+    #customers tr:nth-child(even){background-color: #f2f2f2;}
+    
+    #customers tr:hover {background-color: #ddd;}
+    #padding{
+      padding-left: 250%;
+    }
+    #customers th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+      background-color: #8c31b6;
+      color: white;
+    }
+    #b{
+      color:blueviolet;
+    }
+   
+ </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Ratios</h2>
+    <table id="customers">
+    <thead>
+      <tr>
+        <th scope="col">Liquidity Ratios</th>
+        <th scope="col">2019</th>
+        <th scope="col">2020</th>
+        <th scope="col">2021</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Current Ratio</td>
+        <td>{{Current_ratio}}</td>
+        <td>{{Current_ratio1}}</td>
+        <td>{{Current_ratio2}}</td>
+      </tr>
+      <tr>
+        <td>Quick_ratio</td>
+        <td>{{Quick_ratio}}</td>
+        <td>{{Quick_ratio1}}</td>
+        <td>{{Quick_ratio2}}</td>
+      </tr>
+
+      <!-- Profitability Ratio -->
+      <tr>
+        <th scope="row">Profitability Ratios</th>
+        <th>2019</th>
+        <th>2020</th>
+        <th>2021</th>
+      </tr>
+      <tr>
+        <td>Return on Assets</td>
+        <td>{{Return_on_Assets_ratio}}</td>
+        <td>{{Return_on_Assets_ratio1}}</td>
+        <td>{{Return_on_Assets_ratio2}}</td>
+      </tr>
+      <tr>
+        <td>Return on Equity ratio</td>
+        <td>{{Return_on_Equity_ratio}}</td>
+        <td>{{Return_on_Equity_ratio1}}</td>
+        <td>{{Return_on_Equity_ratio2}}</td>
+      </tr>
+      <tr>
+        <td>Gross Margin ratio</td>
+        <td>{{Gross_Margin_ratio}}</td>
+        <td>{{Gross_Margin_ratio1}}</td>
+        <td>{{Gross_Margin_ratio2}}</td>
+      </tr>
+      <tr>
+        <td>Profit Margin ratio</td>
+        <td>{{Profit_Margin_ratio}}</td>
+        <td>{{Profit_Margin_ratio1}}</td>
+        <td>{{Profit_Margin_ratio2}}</td>
+      </tr>
+      <tr>
+        <td>Operating_Margin_ratio</td>
+        <td>{{Operating_Margin_ratio}}</td>
+        <td>{{Operating_Margin_ratio1}}</td>
+        <td>{{Operating_Margin_ratio2}}</td>
+      </tr>
+      
+      <!-- Activity Turnover Ratio -->
+      <tr>
+        <th scope="row">Activity Turnover Ratios</th>
+        <th>2019</th>
+        <th>2020</th>
+        <th>2021</th>
+      </tr>
+      <tr>
+        <td>Asset Turn Over ratio</td>
+        <td>{{Asset_Turn_Over_ratio}}</td>
+        <td>{{Asset_Turn_Over_ratio1}}</td>
+        <td>{{Asset_Turn_Over_ratio2}}</td>
+      </tr>
+      <tr>
+        <td>Accounts Receivable Turnover ratio</td>
+        <td>{{Accounts_Receivable_Turnover_ratio}}</td>
+        <td>{{Accounts_Receivable_Turnover_ratio1}}</td>
+        <td>{{Accounts_Receivable_Turnover_ratio2}}</td>
+      </tr>
+      
+      <tr>
+        <td>Average Day Sales ratio</td>
+        <td>{{Average_Day_Sales_ratio}}</td>
+        <td>{{Average_Day_Sales_ratio1}}</td>
+        <td>{{Average_Day_Sales_ratio2}}</td>
+      </tr>
+      
+      <tr>
+        <td>Days Payable ratio</td>
+        <td>{{Day_Payable_ratio}}</td>
+        <td>{{Day_Payable_ratio1}}</td>
+        <td>{{Day_Payable_ratio2}}</td>
+      </tr>
+      <tr>
+        <td>Days Receivable ratio</td>
+        <td>{{Day_Receivable_ratio}}</td>
+        <td>{{Day_Receivable_ratio1}}</td>
+        <td>{{Day_Receivable_ratio2}}</td>
+      </tr>
+      <tr>
+        <td>Inventory Turnover ratio</td>
+        <td>{{Inventory_turnover_ratio}}</td>
+        <td>{{Inventory_turnover_ratio1}}</td>
+        <td>{{Inventory_turnover_ratio2}}</td>
+      </tr>
+      <tr>
+        <td>Inventory Turnover Period</td>
+        <td>{{Inventory_turnover_period}}</td>
+        <td>{{Inventory_turnover_period1}}</td>
+        <td>{{Inventory_turnover_period2}}</td>
+      </tr>
+      <tr>
+        <td>working capital Turnover ratio</td>
+        <td>{{working_capital_turnover_ratio}}</td>
+        <td>{{working_capital_turnover_ratio1}}</td>
+        <td>{{working_capital_turnover_ratio2}}</td>
+      </tr>
+      <!-- Solvency Ratios -->
+      <tr>
+        <th scope="row">Solvency Ratios</th>
+        <th>2019</th>
+        <th>2020</th>
+        <th>2021</th>
+      </tr>
+      <tr>
+        <td>Debt ratio</td>
+        <td>{{Debt_ratio}}</td>
+        <td>{{Debt_ratio1}}</td>
+        <td>{{Debt_ratio2}}</td>
+      </tr>
+      <tr>
+        <td>Debt to Equity ratio</td>
+        <td>{{Debt_to_Equity_ratio}}</td>
+        <td>{{Debt_to_Equity_ratio1}}</td>
+        <td>{{Debt_to_Equity_ratio2}}</td>
+      </tr>
+      <!-- Common Ratios -->
+      <tr>
+        <th scope="row">Common Ratios </th>
+        <th>2019</th>
+        <th>2020</th>
+        <th>2021</th>
+      </tr>
+      <tr>
+        <td scope="row">Revenue</td>
+      <td>{{Revenue}}</td>
+      <td>{{Revenue1}}</td>
+      <td>{{Revenue2}}</td>
+      </tr>
+      <tr>
+        <td scope="row">Beginning Inventory </td>
+      <td>{{beginninginventory_ratio}}</td>
+      <td>{{beginninginventory_ratio1}}</td>
+      <td>{{beginninginventory_ratio2}}</td>
+      </tr>
+      <tr>
+        <td scope="row">Purchases</td>
+        <td>{{purchase_ratio}}</td>
+        <td>{{purchase_ratio1}}</td>
+        <td>{{purchase_ratio2}}</td>
+      </tr>
+      <tr>
+        <td scope="row">Freight Expens</td>
+        <td>{{freightExpenses_ratio}}</td>
+        <td>{{freightExpenses_ratio1}}</td>
+        <td>{{freightExpenses_ratio2}}</td>
+      </tr>
+      <tr>
+        <td scope="row">Ending Inventory</td>
+        <td>{{ending_Inventory_ratio}}</td>
+        <td>{{ending_Inventory_ratio1}}</td>
+        <td>{{ending_Inventory_ratio2}}</td>
+      </tr>
+      <tr>
+        <td scope="row">Bill of materials</td>
+        <td  >{{billmaterils_ratio}}</td>
+        <td  >{{billmaterils_ratio1}}</td>
+        <td  >{{billmaterils_ratio2}}</td>
+      </tr>
+      <tr>
+        <td scope="row">Labour Expenses</td>
+        <td  >{{labourcharges_ratio}}</td>
+        <td  >{{labourcharges_ratio1}}</td>
+        <td  >{{labourcharges_ratio2}}</td>
+      </tr>
+      <tr>
+        <td scope="row">Labour charges per working hour</td>
+        <td  >{{labourchargesperworkinghour}}</td>
+        <td  >{{labourchargesperworkinghour1}}</td>
+        <td  >{{labourchargesperworkinghour2}}</td>
+      </tr>
+      <tr>
+        <td scope="row">Sub Contract Expenses</td>
+        <td  >{{subcontractexpenses_ratio}}</td>
+        <td  >{{subcontractexpenses_ratio1}}</td>
+        <td  >{{subcontractexpenses_ratio2}}</td>
+      </tr>
+      <tr>
+        <td scope="row">Cost of Goods Sold</td>
+        <td  >{{costofgoodssold_ratio}}</td>
+        <td  >{{costofgoodssold_ratio1}}</td>
+        <td  >{{costofgoodssold_ratio2}}</td>
+      </tr>
+      
+      <tr>
+        <td scope="row">Business Development</td>
+        <td  >{{businessdevelopment_ratio}}</td>
+        <td  >{{businessdevelopment_ratio1}}</td>
+        <td  >{{businessdevelopment_ratio2}}</td>
+      </tr>
+      <tr>
+        <td scope="row">Fuel Expenses</td>
+        <td  >{{fuelexpenses_ratio}}</td>
+        <td  >{{fuelexpenses_ratio1}}</td>
+        <td  >{{fuelexpenses_ratio2}}</td>
+      </tr>
+      <tr>
+        <td scope="row">Conveyanc Expenses</td>
+        <td  >{{conveyancexpenses_ratio}}</td>
+        <td  >{{conveyancexpenses_ratio1}}</td>
+        <td  >{{conveyancexpenses_ratio2}}</td>
+      </tr>
+      <tr>
+        <td scope="row">Telephone Expenses</td>
+        <td  >{{telephoneexpenses_ratio}}</td>
+        <td  >{{telephoneexpenses_ratio1}}</td>
+        <td  >{{telephoneexpenses_ratio2}}</td>
+      </tr>
+      <tr>
+        <td scope="row">Selling and Admin Expenses</td>
+        <td  >{{sellingandadminexpenses_ratio}}</td>
+        <td  >{{sellingandadminexpenses_ratio1}}</td>
+        <td  >{{sellingandadminexpenses_ratio2}}</td>
+      </tr>
+      <tr>
+        <td scope="row">Electricity Charges</td>
+        <td  >{{electricitycharges_ratio}}</td>
+        <td  >{{electricitycharges_ratio1}}</td>
+        <td  >{{electricitycharges_ratio2}}</td>
+      </tr>
+      <tr>
+        <td scope="row">Vechile Manitainence</td>
+        <td  >{{vechilemanitainence_ratio}}</td>
+        <td  >{{vechilemanitainence_ratio1}}</td>
+        <td  >{{vechilemanitainence_ratio2}}</td>
+      </tr>
+      <tr>
+        <td scope="row">Machine Maintainence</td>
+        <td  >{{machinemaintainence_ratio}}</td>
+        <td  >{{machinemaintainence_ratio1}}</td>
+        <td  >{{machinemaintainence_ratio2}}</td>
+      </tr>
+      <tr>
+        <td scope="row">Rents</td>
+        <td  >{{rents_ratio}}</td>
+        <td  >{{rents_ratio1}}</td>
+        <td  >{{rents_ratio2}}</td>
+      </tr>
+      <tr>
+        <td scope="row">Consumables</td>
+        <td  >{{consumable_ratio}}</td>
+        <td  >{{consumable_ratio1}}</td>
+        <td  >{{consumable_ratio2}}</td>
+      </tr>
+      <tr>
+        <td scope="row">Bank Charges</td>
+        <td  >{{bankcharges_ratio}}</td>
+        <td  >{{bankcharges_ratio1}}</td>
+        <td  >{{bankcharges_ratio2}}</td>
+      </tr>
+      <tr>
+        <td scope="row">Other Operating Expenses</td>
+        <td  >{{otheroperatingexpenses_ratio}}</td>
+        <td  >{{otheroperatingexpenses_ratio1}}</td>
+        <td  >{{otheroperatingexpenses_ratio2}}</td>
+      </tr>
+      <tr>
+        <td scope="row">EBITDA</td>
+        <td  >{{ebitda_ratio}}</td>
+        <td  >{{ebitda_ratio1}}</td>
+        <td  >{{ebitda_ratio2}}</td>
+      </tr>
+      <tr>
+        <td scope="row">Depreciation</td>
+        <td  >{{depreciation_ratio}}</td>
+        <td  >{{depreciation_ratio1}}</td>
+        <td  >{{depreciation_ratio2}}</td>
+      </tr>
+      <tr>
+        <td scope="row">Amortization</td>
+        <td  >{{amortizationexpense_ratio}}</td>
+        <td  >{{amortizationexpense_ratio1}}</td>
+        <td  >{{amortizationexpense_ratio2}}</td>
+      </tr>
+      <tr>
+        <td scope="row">Other Expenses</td>
+        <td  >{{otherexpenses_ratio}}</td>
+        <td  >{{otherexpenses_ratio1}}</td>
+        <td  >{{otherexpenses_ratio2}}</td>
+      </tr>
+      <!-- <tr>
+        <td scope="row">Operating Profit</td>
+        <td  >{{operatingProfit_ratio}}</td>
+        <td  >{{operatingProfit_ratio1}}</td>
+        <td  >{{operatingProfit_ratio2}}</td>
+      </tr> -->
+      <tr>
+        <td scope="row">Bank Interest Expense</td>
+        <td  >{{bank_Interest_Expense_ratio}}</td>
+        <td  >{{bank_Interest_Expense_ratio1}}</td>
+        <td  >{{bank_Interest_Expense_ratio2}}</td>
+      </tr>
+      <tr>
+        <td scope="row">Other Interest Expense</td>
+        <td  >{{other_Interest_Expense_ratio}}</td>
+        <td  >{{other_Interest_Expense_ratio1}}</td>
+        <td  >{{other_Interest_Expense_ratio2}}</td>
+      </tr>
+      <tr>
+        <td scope="row">Total Interest Expense Ratio</td>
+        <td  >{{total_Interest_Expense_ratio}}</td>
+        <td  >{{total_Interest_Expense_ratio1}}</td>
+        <td  >{{total_Interest_Expense_ratio2}}</td>
+      </tr>
+      <tr>
+        <td scope="row">Interest Expense per Hour</td>
+        <td  >{{Interest_Expense_per_hour}}</td>
+        <td  >{{Interest_Expense_per_hour1}}</td>
+        <td  >{{Interest_Expense_per_hour2}}</td>
+      </tr>
+      <tr>
+        <td scope="row">Bank Interest Income Ratio</td>
+        <td  >{{bank_Interest_Income_ratio}}</td>
+        <td  >{{bank_Interest_Income_ratio1}}</td>
+        <td  >{{bank_Interest_Income_ratio2}}</td>
+      </tr>
+      <tr>
+        <td scope="row">Other Interest Income Ratio</td>
+        <td  >{{other_Interest_Income_ratio}}</td>
+        <td  >{{other_Interest_Income_ratio1}}</td>
+        <td  >{{other_Interest_Income_ratio2}}</td>
+      </tr>
+      <tr>
+        <td scope="row">Total Interest Income</td>
+        <td  >{{total_Interest_Income_ratio}}</td>
+        <td  >{{total_Interest_Income_ratio1}}</td>
+        <td  >{{total_Interest_Income_ratio2}}</td>
+      </tr>
+      <tr>
+        <td scope="row">Net Income Before Taxes</td>
+        <td  >{{net_Income_Before_Taxes_ratio}}</td>
+        <td  >{{net_Income_Before_Taxes_ratio1}}</td>
+        <td  >{{net_Income_Before_Taxes_ratio2}}</td>
+      </tr>
+      <tr>
+        <td scope="row">Income Tax Expense</td>
+        <td  >{{income_Tax_Expense_ratio}}</td>
+        <td  >{{income_Tax_Expense_ratio1}}</td>
+        <td  >{{income_Tax_Expense_ratio2}}</td>
+      </tr>
+      <!-- <tr>
+        <td scope="row">Net Income</td>
+        <td  >{{net_Income_ratio}}</td>
+        <td  >{{net_Income_ratio1}}</td>
+        <td  >{{net_Income_ratio2}}</td>
+      </tr> -->
+    </tbody>
+  </table>
+</div>
+  <!-- <br>
+        <p>Beginning Inventory: {{beginvraio}}</p>
+        <p>purchases: {{purchaseratio}}</p>
+        <p>FreightExpens: {{freightExpenses_ratio}}</p>
+        <p>Ending_Inventory:{{ending_Inventory}}</p> -->
+  
+        
+  
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>

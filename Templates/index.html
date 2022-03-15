@@ -1,0 +1,188 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .grid-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 30px;
+  padding: 10px;
+}
+
+.grid-container > div {
+ 
+  text-align: center;
+  padding: 20px 0;
+  font-size: 20px;
+}
+
+    #customers {
+      font-family: Arial, Helvetica, sans-serif;
+      border-collapse: collapse;
+      width: 90%;
+    }
+    
+    #customers td, #customers th {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+    #h2{
+      color:#8c31b6
+    }
+    #h1{
+      padding-left: 30%;
+      background-color: #8c31b6;
+      color: #f2f2f2;
+      width: 60%;
+    }
+    #sub{
+      background-color: #8c31b6;
+      color: #f2f2f2;
+    }
+    #customers tr:nth-child(even){background-color: #f2f2f2;}
+    
+    #customers tr:hover {background-color: #ddd;}
+    #padding{
+      padding-left: 250%;
+    }
+    #customers th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+      background-color: #8c31b6;
+      color: white;
+    }
+    </style></head>
+<body>
+  
+<div class="container">
+  <H1 id="h1">PURCHASE-ORDER</H1>
+<div class="conyainer">
+  
+    <div class="grid-container">
+      <div>
+        <h2 id="h2">Lumicore pty Ltd</h2>
+        <p><b>ABN: </b>82 608 601 798</p>
+         <p><b>bostan MA,</b> 02190</p>
+      </div>
+      <div>
+        <h2 id="h2">Purchase Order</h2>
+         <p><b>Date: </b><span>26-11-2021</span></p>
+         <p><b>Po#: </b><span>PO-00257</span></p>
+         <p><b>PO raised by:</b><span>Yash shah</span></p>
+      </div>
+      </div>
+    
+
+</div>
+<div class="container">
+  <table id="customers">
+  <thead>
+    <tr>
+      <th scope="col">DELIVERY DATE</th>
+      <th scope="col">REQUESTED BY</th>
+      <th scope="col">APPROVED BY</th BY>
+      <th scope="col">DEPARTMEN</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td scope="row">04-28-2017</td>
+    <td>jagadheesh</td>
+      <td>smith</td>
+      <td>IT Department</td>
+    </tr>
+    <tr>
+      <td scope="row">04-28-2017</td>
+      <td>pradumna</td>
+      <td>smith</td>
+      <td>IT Department</td>
+    </tr>
+    <tr>
+      <td scope="row">04-28-2017</td>
+      <td >pradumna</td>
+      <td>smith</td>
+      <td>IT Department</td>
+    </tr>
+  </tbody>
+</table>
+<br>
+
+<table id="customers">
+  <thead>
+    <tr id="customers">
+      <th scope="col">ITEM NAME</th>
+      <th scope="col">ITEMCODE</th>
+      <th scope="col">QTY</th>
+      <th scope="col">ITEM PRISE</th>
+      <th scope="col">DISC</th>
+      <th scope="col">TOTAL</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Nascafe gold blender coffee 7oz</td>
+      <td >QD2-0035</td>
+      <td>100</td>
+      <td>5670</td>
+      <td>0.00</td>
+      <td>34.99</td>
+      
+    </tr>
+    <tr>
+      <td>bulb</td>
+      <td>QD2-0035</td>
+      <td>200</td>
+      <td>700</td>
+      <td>0.00</td>
+      <td>54.33</td>
+      
+    </tr>
+    <tr>
+      <td>bulb</td>
+      <td>QD2-0035</td>
+      <td>1200</td>
+      <td>3000</td>
+      <td>0.00</td>
+      <td>54.66</td>
+      
+    </tr>
+    
+    <tr>
+      <td scope="row">bulb</td>
+      <td>QD2-0035</td>
+      <td>4000</td>
+      <td>40000</td>
+      <td>0.00</td>
+      <td>34.33</td>
+      
+    </tr>
+    
+    
+    <tr>
+      <td scope="row">fan</td>
+      <td>QD2-0035</td>
+      <td>2000</td>
+      <td>5000</td>
+      <td>0.00</td>
+      <td>54.00</td>
+    </tr>
+    <tr>
+      <td scope="row"></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td><button  id ="sub">ORDER TOTAL</button></td>
+      <td><button   id ="sub">234567</button></td>
+      
+      
+    </tr>
+    
+  </tbody>
+</table>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>
+

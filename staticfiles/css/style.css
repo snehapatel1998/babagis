@@ -1,0 +1,26 @@
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+h3{
+  color:blueviolet;
+
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+.bg{
+  background-color: blueviolet;
+}
+#btn{
+  background-color: blueviolet;
+  padding-left: 70%;
+}
