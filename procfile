@@ -1,1 +1,1 @@
-web: gunicorn radeproject.WSGI --log-file -
+web: gunicorn radeproject.WSGI
